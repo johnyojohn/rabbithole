@@ -7,7 +7,8 @@ export default function Home() {
 
   const fetchRecommendations = async () => {
     try {
-      const response = await axios.post("/api/recommend", { url });
+      const response = await axios.post("./api/recommend", { url });
+      console.log(response.data.recommendations);
       setRecommendations(response.data.recommendations);
     } catch (error) {
       console.error("Error fetching recommendations:", error);
